@@ -1,0 +1,19 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+apply from: "$rootDir/gradle/script/features.gradle"
+apply from: "$rootDir/gradle/script/dependencies.gradle"
+
+dependencies {
+
+    // core module
+    implementation project(":core")
+    implementation project(":features:homepage")
+
+    // flipper
+    debugImplementation 'com.facebook.flipper:flipper:0.142.0'
+    debugImplementation 'com.facebook.soloader:soloader:0.10.3'
+    debugImplementation 'com.facebook.flipper:flipper-network-plugin:0.142.0'
+}
