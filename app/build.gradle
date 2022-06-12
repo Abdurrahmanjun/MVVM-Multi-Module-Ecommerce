@@ -11,6 +11,7 @@ dependencies {
     // core module
     implementation project(":core")
     implementation project(":features:homepage")
+    implementation project(":features:profile")
 
     // flipper
     debugImplementation 'com.facebook.flipper:flipper:0.142.0'

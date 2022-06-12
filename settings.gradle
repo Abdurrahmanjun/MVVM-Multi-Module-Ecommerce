@@ -16,5 +16,4 @@ rootProject.name = "Trolli"
 include ':app'
 include ':core'
 include ':features:homepage'
-include ':shared:user'
 include ':features:profile'

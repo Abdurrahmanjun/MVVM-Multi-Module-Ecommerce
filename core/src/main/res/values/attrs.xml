@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TrolliInputField">
+        <attr name="android:label" format="string" />
+        <attr name="android:hint" format="string" />
+        <attr name="android:inputType" format="enum"/>
+    </declare-styleable>
+</resources>
