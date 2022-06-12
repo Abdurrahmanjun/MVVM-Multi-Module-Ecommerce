@@ -2,4 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.abdurrahmanjun.profile">
 
+    <application>
+        <activity android:name=".persentation.feature.login.LoginActivity"/>
+    </application>
+
 </manifest>

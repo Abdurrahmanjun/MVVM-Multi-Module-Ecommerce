@@ -12,9 +12,6 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import retrofit2.HttpException
 
-// interactor mapper
-// original ->  Observable<Response<BaseResponse<T>>>
-// use higher order function for mapper data from response to entity
 fun <T: Any, U: Any> TrolliResponse<T>.mapObservable(mapper: (T) -> U): Observable<U> {
     return flatMap { response ->
         if (response.isSuccessful) {
@@ -37,7 +34,6 @@ fun <T: Any, U: Any> TrolliResponse<T>.mapObservable(mapper: (T) -> U): Observab
 
             val typeToken = object : TypeToken<BaseResponse<Any>>() {}.type
             val bodyErrorData = gson.fromJson<BaseResponse<Any>>(bodyError, typeToken)
-            println("base response data -> $bodyErrorData")
             val messageResponse = bodyErrorData.message
             val messageHttp = response.message()
             val message = "$messageHttp, message: $messageResponse"
@@ -47,8 +43,6 @@ fun <T: Any, U: Any> TrolliResponse<T>.mapObservable(mapper: (T) -> U): Observab
     }
 }
 
-// fetcher state event
-// merubah data observable entity ke dalam subscriber state event
 fun <T: Any> Observable<T>.fetchStateEventSubscriber(onSubscribe: (StateEvent<T>) -> Unit) : Disposable {
     return subscribeOn(Schedulers.io())
         .observeOn(AndroidSchedulers.mainThread())

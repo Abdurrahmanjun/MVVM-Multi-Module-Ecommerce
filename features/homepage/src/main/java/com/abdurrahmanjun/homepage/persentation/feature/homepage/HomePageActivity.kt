@@ -1,4 +1,6 @@
 package com.abdurrahmanjun.homepage.persentation.feature.homepage
 
-class HomePageActivity {
+import androidx.appcompat.app.AppCompatActivity
+
+class HomePageActivity : AppCompatActivity() {
 }
