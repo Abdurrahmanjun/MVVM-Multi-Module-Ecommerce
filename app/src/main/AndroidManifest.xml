@@ -14,14 +14,16 @@
         android:theme="@style/Theme.Trolli">
         <activity
             android:name=".features.splash.SplashActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/NoActionBarStyle">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".features.onboarding.OnBoardingActivity"/>
+        <activity
+            android:name=".features.onboarding.OnBoardingActivity"/>
     </application>
 
 </manifest>

@@ -3,7 +3,10 @@
     package="com.abdurrahmanjun.profile">
 
     <application>
-        <activity android:name=".persentation.feature.login.LoginActivity"/>
+        <activity
+            android:name=".persentation.feature.login.LoginActivity"
+            android:theme="@style/NoActionBarStyle"/>
+        <activity android:name=".persentation.feature.signup.SignUpActivity"/>
     </application>
 
 </manifest>

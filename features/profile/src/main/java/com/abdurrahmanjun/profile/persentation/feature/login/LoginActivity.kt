@@ -35,7 +35,7 @@ class LoginActivity : AppCompatActivity() {
                 profileLoginProgressbar.isVisible = false
                 profileBtnLogin.isEnabled = true
                 loginViewModel.saveToken(it)
-                intentTo("com.utsman.trolliaej.MainActivity")
+                intentTo("com.abdurrahmanjun.homepage.persentation.feature.homepage.HomePageActivity")
             }
             loginEventManager.onFailure = { code, ex ->
                 profileLoginProgressbar.isVisible = false
@@ -46,6 +46,10 @@ class LoginActivity : AppCompatActivity() {
                 val username = profileEtEmail.text
                 val password = profileEtPassword.text
                 loginViewModel.requestLogin(username, password)
+            }
+
+            profileTvSignup.setOnClickListener {
+                intentTo("com.abdurrahmanjun.profile.persentation.feature.signup.SignUpActivity")
             }
         }
     }
